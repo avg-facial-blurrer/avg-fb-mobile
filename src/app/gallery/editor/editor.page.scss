@@ -1,0 +1,60 @@
+#Editor {
+  position: relative;
+  float:none;
+}
+
+#Image {
+  position: relative;
+  float:none;
+}
+
+.BlurBlock {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border: 3px solid red;
+  background: transparent;
+}
+
+.btn {
+  position: fixed;
+  bottom: 10px;
+}
+
+.addbtn {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+}
+
+.deletebtn {
+  position: fixed;
+  bottom: 10px;
+  right: 100px;
+}
+
+.Smallbtn {
+  position: fixed;
+  bottom: 10px;
+  right: 185px;
+}
+
+.Medbtn {
+  position: fixed;
+  bottom: 10px;
+  right: 270px;
+}
+
+.Largebtn {
+  position: fixed;
+  bottom: 10px;
+  right: 355px;
+}
+
+.Smallsqr {
+  height: 5px;
+}
+
+.Medsqr {
+  height: 10px;
+}

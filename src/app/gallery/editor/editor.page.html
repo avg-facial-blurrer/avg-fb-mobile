@@ -1,0 +1,23 @@
+<ion-content id="Editor">
+    <ion-img id="Image" [src]="loadImage()" (click)="ImageClicks($event)"></ion-img>
+</ion-content>
+<ion-button id="Add" class="addbtn" (click)="setEditorMode(1)">
+    <ion-icon name="md-add-circle"></ion-icon>
+</ion-button>
+<ion-button id="Delete" class="deletebtn" (click)="setEditorMode(2)">
+    <ion-icon name="md-trash"></ion-icon>
+</ion-button>
+<ion-button id="Send" class="btn">
+    <ion-icon name="md-send"></ion-icon>
+</ion-button>
+
+<ion-button *ngIf="editorMode == 1" id="SmallFace" class="Smallbtn" (click)="setFaceSize(0)">
+    <ion-icon name="md-square-outline" class="Smallsqr"></ion-icon>
+</ion-button>
+<ion-button *ngIf="editorMode == 1" id="MediumFace" class="Medbtn" (click)="setFaceSize(1)">
+    <ion-icon name="md-square-outline" class="Medsqr"></ion-icon>
+</ion-button>
+<ion-button *ngIf="editorMode == 1" id="LargeFace" class="Largebtn" (click)="setFaceSize(2)">
+    <ion-icon name="md-square-outline"></ion-icon>
+</ion-button>
+

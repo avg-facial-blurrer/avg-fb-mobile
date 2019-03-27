@@ -1,0 +1,34 @@
+<ion-header *ngIf="!detectedImage">
+    <ion-toolbar color="primary">
+      <ion-title>
+        Galerij Sterrebos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding *ngIf="!receivedImage && !listOfFaces">
+      <h3 *ngIf="this.images.length== 0" text-center>De galerij is nog leeg, voeg een foto toe!</h3>
+    
+      <ion-list>
+        <ion-item *ngFor="let img of images" text-wrap>
+          <ion-thumbnail slot="start">
+            <ion-img [src]="img.path" (click)="selectedImage = img.path"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            {{ img.name }}
+          </ion-label>
+          <ion-button slot="end" fill="clear" (click)="startUploadDetection(img)">
+            <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+          </ion-button>
+          <ion-button slot="end" fill="clear" (click)="deleteImage(img)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+<ion-content *ngIf="receivedImage!=undefined">
+    <app-download-picture [picture]="receivedImage" (talk)="talkBack($event)"></app-download-picture>
+</ion-content>
+<ion-content *ngIf="listOfFaces!=undefined && detectedImage!=undefined">
+  <app-editor [picture]="detectedImage" [listOfFaces]="listOfFaces" (talk)="talkBackSend($event)"></app-editor>
+</ion-content>

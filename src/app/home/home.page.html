@@ -1,0 +1,19 @@
+<ion-tabs>
+  <ion-tab tab="addPicture">
+    <ion-router-outlet name="addPicture"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab tab="gallery">
+    <ion-router-outlet name="gallery"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="addPicture" href="/home/(addPicture:addPicture)">
+      <ion-icon name="camera"></ion-icon>
+      <ion-label>Foto toevoegen</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="gallery" href="/home/(gallery:gallery)">
+      <ion-icon name="photos"></ion-icon>
+      <ion-label>Galerij</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

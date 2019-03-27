@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Foto toevoegen
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="!picture &&!receivedPicture">
+  <ion-button fill="clear" expand="full" color="secondary" (click)="takePicture()">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Maak een foto
+  </ion-button>
+  <!-- Change to uploading image -->
+  <ion-button fill="clear" expand="full" color="secondary" (click)="takePicture(true)">
+    <ion-icon slot="start" name="image"></ion-icon>
+    Upload een foto
+  </ion-button>
+</ion-content>
+<ion-content padding *ngIf="(picture && picturewebPath) && !receivedPicture">
+  <img src="{{ picturewebPath }}">
+  <ion-button fill="clear" expand="full" color="secondary" (click)="processImage(true)">
+    <ion-icon slot="start" name="images"></ion-icon>
+    In app opslaan
+  </ion-button>
+  <ion-button fill="clear" expand="full" color="secondary" (click)="processImage()">
+    <ion-icon slot="start" name="close-circle"></ion-icon>
+    Annuleren
+  </ion-button>
+</ion-content>
+
+<ion-content *ngIf="receivedPicture!=undefined">
+  <app-download-picture [picture]="receivedPicture" (talk)="talkBack($event)"></app-download-picture>
+</ion-content>
